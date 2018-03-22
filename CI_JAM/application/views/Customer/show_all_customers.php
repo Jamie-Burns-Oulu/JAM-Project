@@ -1,4 +1,9 @@
 <h2>Customers</h2>
+<?php
+  echo '<a href="'.site_url('Customer/add_customer').'"><button class="btn btn-primary">Add a new customer</button></a>';
+?>
+
+
 <table class="table table-hover table-bordered">
   <tr class="info">
     <th>ID</th><th>Name</th><th>Email</th><th>Address</th><th>Rentals</th><th>Last Rental</th><th>Current Bike ID</th>
