@@ -14,7 +14,8 @@
       <li> <a href="<?php echo site_url('bike/show_all_bikes'); ?>">Bikes</a> </li>
       <li> <a href="<?php echo site_url('bike/show_mens_bikes'); ?>">Mens Bikes</a> </li>
       <li> <a href="<?php echo site_url('bike/show_womans_bikes'); ?>">Womans Bikes</a> </li>
-    
+      <li> <a href="<?php echo site_url('bike/show_kids_bikes'); ?>">Kids Bikes</a> </li>
+      <li> <a href="<?php echo site_url('customer/show_all_customers'); ?>">Customers</a> </li>
   </div>
   <div class="page">
     <div class="container">

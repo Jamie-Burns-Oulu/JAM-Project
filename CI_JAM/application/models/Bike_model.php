@@ -25,6 +25,12 @@ class Bike_model extends CI_model
     return $this->db->get()->result_array();
   }
 
+ public function get_kids_bikes(){
+    $this->db->select('*');
+    $this->db->from('bikes');
+    $this->db->where('gender','kids');
+    return $this->db->get()->result_array();
+  }
 
     
 

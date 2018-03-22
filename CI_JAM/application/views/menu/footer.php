@@ -2,7 +2,7 @@
 </div>
 <hr>
 <p align="middle">
-Please come and visit The University of Databases anytime!
+Please come and visit The JAM project anytime!
 <p>
 </body>
 </html>

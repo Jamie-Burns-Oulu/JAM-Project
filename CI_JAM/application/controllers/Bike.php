@@ -29,6 +29,13 @@ class Bike extends CI_Controller {
       $this->load->view('menu/content',$data);
     }
 
+    public function show_kids_bikes(){
+      $this->load->model('bike_model');
+      $data['bike']=$this->bike_model->get_kids_bikes();
+      $data['page']='bike/show_kids_bikes';
+      $this->load->view('menu/content',$data);
+    }
+
 
  
   }
