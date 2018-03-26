@@ -2,7 +2,6 @@
 
 
 <form class="" action="<?php echo site_url('bike/save_edited'); ?>" method="post">
-<input type="hidden" name="bike_id" value="<?php echo $bike_id; ?>">
    <label for="">ID</label><br>
    <input type="text" name="bike_id" value="<?php echo $selected_bike[0]['bike_id'];?>" readonly><br>
 
@@ -31,10 +30,10 @@
    <input type="text" name="gender" value="<?php echo $selected_bike[0]['gender'];?>"><br>
 
    <label for="">Last Rental</label><br>
-   <input type="text" name="last_rental" value="<?php echo $selected_bike[0]['last_rental'];?>"><br>
+   <input type="date" name="last_rental" value="<?php echo $selected_bike[0]['last_rental'];?>"><br>
 
    <label for="">Date Bought</label><br>
-   <input type="text" name="date_bought" value="<?php echo $selected_bike[0]['date_bought'];?>"><br>
+   <input type="date" name="date_bought" value="<?php echo $selected_bike[0]['date_bought'];?>"><br>
 
    <label for="">Purchase Price</label><br>
    <input type="text" name="purchase_price" value="<?php echo $selected_bike[0]['purchase_price'];?>"><br>
@@ -45,7 +44,7 @@
 
   <input class="btn btn-primary" type="submit" name="" value="Save">
 </form>
-<br><a href="#"><button class="btn btn-primary">Cancel</button></a>
+<br><a href="<?php echo site_url('bike/show_all_bikes'); ?>" <button class="btn btn-primary">Cancel</button></a>
 
 
 

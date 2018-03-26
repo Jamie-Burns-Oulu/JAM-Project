@@ -22,6 +22,13 @@ class Bike extends CI_Controller {
       $this->load->view('menu/content',$data);
     }
 
+    public function customer_mens(){
+      $this->load->model('bike_model');
+      $data['bike']=$this->bike_model->get_mens_customer();
+      $data['page']='bike/customer_mens';
+      $this->load->view('menu/content',$data);
+    }
+
     public function show_womans_bikes(){
       $this->load->model('bike_model');
       $data['bike']=$this->bike_model->get_womans_bikes();
@@ -36,7 +43,52 @@ class Bike extends CI_Controller {
       $this->load->view('menu/content',$data);
     }
 
+    public function edit_selected($edit_id){
+      $this->load->model('bike_model');
+      $data['bike_id']=$edit_id;
+      $data['selected_bike']=$this->bike_model->get_selected_bike($edit_id);
+      $data['page']='bike/edit_selected';
+      $this->load->view('menu/content',$data);
+    }
 
+    public function view_selected($edit_id){
+      $this->load->model('bike_model');
+      $data['bike_id']=$edit_id;
+      $data['selected_bike']=$this->bike_model->get_selected_bike($edit_id);
+      $data['page']='bike/view_selected';
+      $this->load->view('menu/content',$data);
+    }
+  
+  public function save_edited(){
+    $this->load->model('bike_model');
+    $update_id=$this->input->post('bike_id');
+    $data_update=array(
+      'bike_id'=>$this->input->post('bike_id'),
+      'brand'=>$this->input->post('brand'),
+      'model'=>$this->input->post('model'),
+      'size'=>$this->input->post('size'),
+      'email'=>$this->input->post('email'),
+      'rent_price'=>$this->input->post('rent_price'),
+      'availability'=>$this->input->post('availability'),
+      'maintenance'=>$this->input->post('maintenance'),
+      'distance'=>$this->input->post('distance'),
+      'gender'=>$this->input->post('gender'),
+      'last_rental'=>$this->input->post('last_rental'),
+      'date_bought'=>$this->input->post('date_bought'),
+      'purchase_price'=>$this->input->post('purchase_price'),
+      'sale_price'=>$this->input->post('sale_price')
+    );
+    $success=$this->bike_model->save_edited($update_id,$data_update);
+    if($success){
+      $data['message']='You have updated bike: '.$this->input->post('bike_id');
+    }
+    else {
+      $data['message']='Something went wrong'.$this->input->post('bike_id');
+    }
+    $data['page']='bike/add_bike_to_db';
+    $this->load->view('menu/content',$data);
+  }
+  
  
   }
 
