@@ -1,5 +1,5 @@
 .menu{
-  background-color: lightblue;
+  background-color: rgb(190, 198, 201);
   float: left;
   width: 160px;
   border-radius: 10px;
@@ -14,4 +14,74 @@
 
 .page{
   margin-left: 170px;
+  background: #e6e5e5;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.flex-item {
+  background: linear-gradient(to bottom, #92c1ff 0%, #8faff3 80%,#437cf7 100%);
+  padding: 10px;
+  width:300px;
+  height: 150px;
+  margin-top: 20px;
+  text-align: center;
+  line-height: 40px;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius:50px;
+
+}
+
+.bike_details{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, #92c1ff 0%,rgb(173, 197, 250) 41%,#9ebaf7 53%,#437cf7 100%);
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    opacity: 0.95;
+}
+iframe{
+  height: 300px;
+  width: 400px;
+  position: fixed;
+  padding: 0;
+  margin: 200px 400px auto;
+  top: 0;
+  left: 0;
+  text-align: center;
+  border:none;
+}
+
+button{
+  color: white;
+  font-size: 20px;
+  padding: 5px;
+  line-height: 2;
+  background: none;
+  border-style: none;
+  cursor: pointer;
+  text-shadow: 0 0 3px black;
 }

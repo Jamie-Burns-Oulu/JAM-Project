@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>JAM Project</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   
     <link rel="stylesheet" href="<?php echo base_url('css/mystyle.css');?>">
+
   </head>
   <body>
     <div class="menu">
@@ -17,6 +18,10 @@
       <li> <a href="<?php echo site_url('bike/show_womans_bikes'); ?>">Womans Bikes</a> </li>
       <li> <a href="<?php echo site_url('bike/show_kids_bikes'); ?>">Kids Bikes</a> </li>
       <li> <a href="<?php echo site_url('customer/show_all_customers'); ?>">Customers</a> </li>
+
+    </ul>
+
+
   </div>
   <div class="page">
     <div class="container">

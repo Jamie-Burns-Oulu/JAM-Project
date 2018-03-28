@@ -3,6 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Bike extends CI_Controller {
 
+  
+
    public function index(){
       $data['page']='bike/index';
       $this->load->view('menu/content',$data);
@@ -27,6 +29,7 @@ class Bike extends CI_Controller {
       $data['bike']=$this->bike_model->get_mens_customer();
       $data['page']='bike/customer_mens';
       $this->load->view('menu/content',$data);
+      
     }
 
     public function show_womans_bikes(){
@@ -56,7 +59,7 @@ class Bike extends CI_Controller {
       $data['bike_id']=$edit_id;
       $data['selected_bike']=$this->bike_model->get_selected_bike($edit_id);
       $data['page']='bike/view_selected';
-      $this->load->view('menu/content',$data);
+      $this->load->view('menu/onlycontent',$data);
     }
   
   public function save_edited(){

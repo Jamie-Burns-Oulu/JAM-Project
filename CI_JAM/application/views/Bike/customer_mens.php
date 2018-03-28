@@ -1,56 +1,48 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<style>
-.flex-container {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-  justify-content: space-around;
-}
-
-.flex-item {
-  background: #00f8;
-  padding: 10px;
-  width:300px;
-  height: 150px;
-  margin-top: 20px;
-  text-align: center;
-  line-height: 40px;
-  color: white;
-  font-weight: bold;
-  font-size: 15px;
-  
-}
-a{
-  text-decoration=none;
-  color: white;
-
-}
-</style>
-   
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
-<h2>Bikes | Mens </h2>
+<h2>Bicycles for Rental | Mens </h2>
 
 <?php
 
-echo '<div class="flex-container">';
-foreach ($bike as $row) {
+  echo '<div class="flex-container">';
+  $i = -1;
+  foreach ($bike as $row) {
+    $i+=9;
+    echo '<div class="flex-item"><button id="'.$i.'"class="show_details">';
+    echo 'Price: €'.$row['rent_price'];
+    echo '/day <br> Brand: '.$row['brand'];
+    echo '<br> Model: '.$row['model'].'</button>';
+    echo '</div>'; 
 
-  echo '<div class="flex-item"><a href="'.site_url('bike/view_selected/')
-  .$row['bike_id'].'"> Price: €'.$row['rent_price'];
-  echo '/day <br> Brand: '.$row['brand'];
-  echo '<br> Model: '.$row['model'].'</a></div>'; 
+  }
 
-}
-echo '</div>';
+  echo '</div>';
 
- ?>
+?>
 
+<div class="bike_details">
+  <iframe id=iframesrc src="http://localhost/CI_JAM/index.php/bike/view_selected/1"></iframe>
+</div>
 
+<script>
+
+  $(document).ready(function () {
+    $(".bike_details").hide();
+
+    $(".show_details").click(function () {
+      var id = $(this).attr('id');
+      $("#iframesrc").attr('src', "http://localhost/CI_JAM/index.php/bike/view_selected/" + id);
+      $(".bike_details").delay(800).fadeIn(500);
+    });
+
+    $(".bike_details").click(function () {
+      $(".bike_details").hide();
+    });
+
+  });
+
+</script>
