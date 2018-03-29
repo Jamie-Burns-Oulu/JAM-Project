@@ -28,8 +28,7 @@ class Bike extends CI_Controller {
       $this->load->model('bike_model');
       $data['bike']=$this->bike_model->get_mens_customer();
       $data['page']='bike/customer_mens';
-      $this->load->view('menu/content',$data);
-      
+      $this->load->view('menu/content',$data);      
     }
 
     public function show_womans_bikes(){
@@ -39,11 +38,25 @@ class Bike extends CI_Controller {
       $this->load->view('menu/content',$data);
     }
 
+    public function customer_womans(){
+      $this->load->model('bike_model');
+      $data['bike']=$this->bike_model->get_womans_customer();
+      $data['page']='bike/customer_womans';
+      $this->load->view('menu/content',$data);      
+    }
+
     public function show_kids_bikes(){
       $this->load->model('bike_model');
       $data['bike']=$this->bike_model->get_kids_bikes();
       $data['page']='bike/show_kids_bikes';
       $this->load->view('menu/content',$data);
+    }
+
+    public function customer_kids(){
+      $this->load->model('bike_model');
+      $data['bike']=$this->bike_model->get_kids_customer();
+      $data['page']='bike/customer_kids';
+      $this->load->view('menu/content',$data);      
     }
 
     public function edit_selected($edit_id){
@@ -59,6 +72,14 @@ class Bike extends CI_Controller {
       $data['bike_id']=$edit_id;
       $data['selected_bike']=$this->bike_model->get_selected_bike($edit_id);
       $data['page']='bike/view_selected';
+      $this->load->view('menu/onlycontent',$data);
+    }
+
+    public function view_selected_kids($edit_id){
+      $this->load->model('bike_model');
+      $data['bike_id']=$edit_id;
+      $data['selected_bike']=$this->bike_model->get_selected_bike($edit_id);
+      $data['page']='bike/view_selected_kids';
       $this->load->view('menu/onlycontent',$data);
     }
   
