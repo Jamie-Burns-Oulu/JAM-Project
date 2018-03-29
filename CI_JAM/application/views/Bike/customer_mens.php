@@ -2,10 +2,9 @@
 <html>
 
 <head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="<?php echo base_url('css/mystyle.css');?>">
 </head>
-<h2>Bicycles for Rental | Mens </h2>
-
 <?php
 
   echo '<div class="flex-container">';
@@ -24,8 +23,8 @@
 
 ?>
 
-<div class="bike_details">
-  <iframe id=iframesrc src="http://localhost/CI_JAM/index.php/bike/view_selected/1"></iframe>
+<div class="bike_details"><div id=closing>X</div>
+  <iframe class="iframe0" id=iframesrc src="http://localhost/CI_JAM/index.php/bike/view_selected/1"></iframe>
 </div>
 
 <script>

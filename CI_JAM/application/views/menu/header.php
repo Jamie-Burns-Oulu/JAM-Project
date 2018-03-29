@@ -12,9 +12,7 @@
 
     <ul>
       <li> <a href="<?php echo site_url('bike/index'); ?>">Main page</a> </li>    
-      <li> <a href="<?php echo site_url('bike/customer_mens'); ?>">Mens Rental View</a> </li>
-      <li> <a href="<?php echo site_url('bike/customer_womans'); ?>">Womans Rental View</a> </li>
-      <li> <a href="<?php echo site_url('bike/customer_kids'); ?>">Kids Rental View</a> </li>
+      <li> <a href="<?php echo site_url('bike/customer_rental'); ?>">All Rentals View</a> </li>
       <br>
       <li> <a href="<?php echo site_url('bike/show_all_bikes'); ?>">*Staff* Bikes</a> </li>
       <li> <a href="<?php echo site_url('bike/show_mens_bikes'); ?>">*Staff* Mens Bikes</a> </li>

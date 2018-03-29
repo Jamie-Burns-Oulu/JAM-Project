@@ -62,8 +62,9 @@ input[type=text] {
     top: 0;
     left: 0;
     opacity: 0.95;
+    cursor: pointer;
 }
-iframe{
+.iframe0{
   height: 300px;
   width: 400px;
   position: fixed;
@@ -85,3 +86,17 @@ button{
   cursor: pointer;
   text-shadow: 0 0 3px black;
 }
+#closing{
+  padding-top:130px;
+  padding-left: 700px;
+}
+
+.iframe1{
+  width: 100%;
+  border:none;
+  height: 800px;
+}
+.all_rental{
+  display: flex;
+}
+button:focus {outline:0;}
