@@ -4,11 +4,14 @@
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" href="<?php echo base_url('css/mystyle.css');?>">
+  
 </head>
+
+
 <?php
 
   echo '<div class="flex-container">';
-  $i = -1;
+  $i = 89;
   foreach ($bike as $row) {
     $i+=9;
     echo '<div class="flex-item"><button id="'.$i.'"class="show_details">';
@@ -24,7 +27,7 @@
 ?>
 
 <div class="bike_details"><div id=closing>X</div>
-  <iframe class="iframe0" id=iframesrc allowfullscreen src="http://localhost/CI_JAM/index.php/bike/view_selected/1"></iframe>
+  <iframe class="iframe0" id=iframesrc src="http://localhost/CI_JAM/index.php/bike/view_selected/1" allowfullscreen></iframe>
 </div>
 
 <script>

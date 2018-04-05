@@ -20,7 +20,6 @@ foreach ($bike as $row) {
   echo '<td>'.$row['purchase_price'].'</td>';
   echo '<td>'.$row['sale_price'].'</td>';
   echo '</tr>';
-
 }
  ?>
 </tr>

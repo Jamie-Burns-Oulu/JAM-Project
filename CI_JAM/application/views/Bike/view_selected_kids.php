@@ -10,7 +10,7 @@ input:disabled {
 </head>
 
 
-<form action="<?php echo site_url('bike/reserve'); ?>" target="_blank" method="POST">
+<form action="<?php echo site_url('bike/reserve/').$selected_bike[0]['bike_id']; ?>" target="_top" method="POST">
 Brand:
 <input name="brand" value="<?php echo $selected_bike[0]['brand'];?>" disabled>
 <br> 

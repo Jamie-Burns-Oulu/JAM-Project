@@ -7,84 +7,78 @@
 </head>
 
 <h2>Bicycles for Rental</h2>
-<button id=mbtn style="color:black" >Men's</button>
-<button id=wbtn >Women's</button>
-<button id=kbtn >Kids'</button>
+<button id=m style="color:black" >Men's</button>
+<button id=w >Women's</button>
+<button id=k >Kids'</button>
 <br>
 Click the bicycle of your choice to reserve now!
 
 <div class="all_rental">
-	<iframe class=iframe1 id=Mens src="<?php echo site_url('bike/customer_mens_all'); ?>"></iframe>
+	<iframe class=iframe1 id=Mens src="<?php echo site_url('bike/customer_mens_all'); ?>" allowfullscreen></iframe>
 </div>
 <div class="all_rental">
-	<iframe class=iframe1 id=Womans src="<?php echo site_url('bike/customer_womans_all'); ?>"></iframe>
+	<iframe class=iframe1 id=Womens src="<?php echo site_url('bike/customer_womens_all'); ?>" allowfullscreen></iframe>
 </div>
 <div class="all_rental">
-	<iframe class=iframe1 id=Kids src="<?php echo site_url('bike/customer_kids_all'); ?>"></iframe>
+	<iframe class=iframe1 id=Kids src="<?php echo site_url('bike/customer_kids_all'); ?>" allowfullscreen></iframe>
 </div>
 
 <script>
 $(document).ready(function () {
-   mbtn = true;
-   wbtn = false;
-   kbtn = false;
+   m = true;
+   w = k = false;
    mid = $("#Mens");
-   wid = $("#Womans");
+   wid = $("#Womens");
    kid = $("#Kids");
+   mbtn = $("#m");
+   wbtn = $("#w");
+   kbtn = $("#k");
    wid.hide();
    kid.hide();
 
-
-   $("#mbtn").click(function () {
-      wbtn = false;
-      kbtn = false;
-      mbtn = true;
+   mbtn.click(function () {
+      m = true;
+      w = false;
+      k = false;      
       toggles();
       $(this).css("color", "black");
    });
-
-
-   $("#wbtn").click(function () {
-      wbtn = true;
-      kbtn = false;
-      mbtn = false;
+   wbtn.click(function () {
+      m = false;
+      w = true;
+      k = false;      
       toggles();
       $(this).css("color", "black");   
    });
-
-
-   $("#kbtn").click(function () {
-      wbtn = false;
-      kbtn = true;
-      mbtn = false;
+   kbtn.click(function () {
+      m = false;
+      w = false;
+      k = true;    
       toggles();
       $(this).css("color", "black");     
    });
-
    function toggles() {
-       if (mbtn && !wbtn && !kbtn) {
-         mid.show();
+       if (m && !w && !k) {
+         mid.fadeIn(200);
          wid.hide();
          kid.hide();
-         $("#kbtn").css("color", "white");
-         $("#wbtn").css("color", "white");
+         kbtn.css("color", "white");
+         wbtn.css("color", "white");
 
-      } else if (!mbtn && wbtn && !kbtn) {
+      } else if (!m && w && !k) {
          mid.hide();
-         wid.show();
+         wid.fadeIn(200);
          kid.hide();
-         $("#kbtn").css("color", "white");
-         $("#mbtn").css("color", "white");
+         kbtn.css("color", "white");
+         mbtn.css("color", "white");
 
-      } else if (!mbtn && !wbtn && kbtn) {
+      } else if (!m && !w && k) {
          mid.hide();
          wid.hide();
-         kid.show();
-         $("#mbtn").css("color", "white");
-         $("#wbtn").css("color", "white");
+         kid.fadeIn(200);
+         mbtn.css("color", "white");
+         wbtn.css("color", "white");
       }
    }
-
 });
-
 </script>

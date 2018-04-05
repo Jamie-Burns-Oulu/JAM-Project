@@ -26,7 +26,7 @@
 ?>
 
 <div class="bike_details"><div id=closing>X</div>
-  <iframe class="iframe0" id=iframesrc src="http://localhost/CI_JAM/index.php/bike/view_selected/1"></iframe>
+  <iframe class="iframe0" id=iframesrc  allowfullscreen src="http://localhost/CI_JAM/index.php/bike/view_selected/1"></iframe>
 </div>
 
 <script>
