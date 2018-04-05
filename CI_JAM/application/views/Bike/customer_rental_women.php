@@ -7,8 +7,8 @@
 </head>
 
 <h2>Bicycles for Rental</h2>
-<button id=mbtn style="color:black" >Men's</button>
-<button id=wbtn >Women's</button>
+<button id=mbtn >Men's</button>
+<button id=wbtn style="color:black" >Women's</button>
 <button id=kbtn >Kids'</button>
 <br>
 Click the bicycle of your choice to reserve now!
@@ -25,13 +25,13 @@ Click the bicycle of your choice to reserve now!
 
 <script>
 $(document).ready(function () {
-   mbtn = true;
-   wbtn = false;
+   mbtn = false;
+   wbtn = true;
    kbtn = false;
    mid = $("#Mens");
    wid = $("#Womans");
    kid = $("#Kids");
-   wid.hide();
+   mid.hide();
    kid.hide();
 
 

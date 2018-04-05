@@ -1,13 +1,20 @@
 .menu{
   background-color: rgb(190, 198, 201);
-  width: 100%;
+  float: left;
+  width: 160px;
   border-radius: 10px;
   margin: 10px;
-  text-align: center;
 }
+.menu ul {
+  list-style-type: none;
+}
+.menu ul li a:hover{
+  background-color: white;
+}
+
 .page{
+  margin-left: 170px;
   background: #e6e5e5;
-  padding-bottom: 300px;
 }
 
 input[type=text] {
@@ -26,10 +33,8 @@ input[type=text] {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  flex-flow: flex;
   -webkit-flex-flow: row wrap;
   justify-content: space-around;
-  height: 500px;
 }
 
 .flex-item {
@@ -60,8 +65,8 @@ input[type=text] {
     cursor: pointer;
 }
 .iframe0{
-  height: 100%;
-  width: 100%;
+  height: 300px;
+  width: 400px;
   position: fixed;
   padding: 0;
   margin: 200px 400px auto;
@@ -79,6 +84,7 @@ button{
   background: none;
   border-style: none;
   cursor: pointer;
+  text-shadow: 0 0 3px black;
 }
 #closing{
   padding-top:130px;
@@ -88,11 +94,9 @@ button{
 .iframe1{
   width: 100%;
   border:none;
-  height: 500px;
-
+  height: 800px;
 }
 .all_rental{
   display: flex;
-  
 }
 button:focus {outline:0;}

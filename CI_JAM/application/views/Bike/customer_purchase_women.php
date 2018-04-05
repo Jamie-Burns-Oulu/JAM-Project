@@ -6,32 +6,32 @@
    <link rel="stylesheet" href="<?php echo base_url('css/mystyle.css');?>">
 </head>
 
-<h2>Bicycles for Rental</h2>
-<button id=mbtn style="color:black" >Men's</button>
-<button id=wbtn >Women's</button>
+<h2>Bicycles for Purchase</h2>
+<button id=mbtn >Men's</button>
+<button id=wbtn style="color:black" >Women's</button>
 <button id=kbtn >Kids'</button>
 <br>
-Click the bicycle of your choice to reserve now!
+Click the bicycle of your choice to buy now!
 
 <div class="all_rental">
-	<iframe class=iframe1 id=Mens src="<?php echo site_url('bike/customer_mens_all_rental'); ?>"></iframe>
+	<iframe class=iframe1 id=Mens src="<?php echo site_url('bike/customer_mens_all_purchase'); ?>"></iframe>
 </div>
 <div class="all_rental">
-	<iframe class=iframe1 id=Womans src="<?php echo site_url('bike/customer_womans_all_rental'); ?>"></iframe>
+	<iframe class=iframe1 id=Womans src="<?php echo site_url('bike/customer_womans_all_purchase'); ?>"></iframe>
 </div>
 <div class="all_rental">
-	<iframe class=iframe1 id=Kids src="<?php echo site_url('bike/customer_kids_all_rental'); ?>"></iframe>
+	<iframe class=iframe1 id=Kids src="<?php echo site_url('bike/customer_kids_all_purchase'); ?>"></iframe>
 </div>
 
 <script>
 $(document).ready(function () {
-   mbtn = true;
-   wbtn = false;
+   mbtn = false;
+   wbtn = true;
    kbtn = false;
    mid = $("#Mens");
    wid = $("#Womans");
    kid = $("#Kids");
-   wid.hide();
+   mid.hide();
    kid.hide();
 
 
