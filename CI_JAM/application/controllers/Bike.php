@@ -1,161 +1,123 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Bike extends CI_Controller {
+class Bike extends CI_Controller {  
 
-  
-
+//  Index  -- Main page
    public function index(){
       $data['page']='bike/index';
       $this->load->view('menu/onlycontent',$data);
-    }
- 
-    public function show_all_bikes(){
-      $this->load->model('bike_model');
-      $data['bike']=$this->bike_model->get_all_bikes();
-      $data['page']='bike/show_all_bikes';
-      $this->load->view('menu/content',$data);
-    }
+    } 
+////////////////////////////////////////////////////////////
 
-    public function customer_rental(){
-      $data['page']='bike/customer_rental';
+// All Rentals Pages
+    public function rent(){
+      $data['page']='bike/rent';
       $this->load->view('menu/content',$data);
-    }
-
-    public function customer_rental_women(){
-      $data['page']='bike/customer_rental_women';
-      $this->load->view('menu/content',$data);
-    }
-
-    public function customer_rental_kids(){
-      $data['page']='bike/customer_rental_kids';
-      $this->load->view('menu/content',$data);
-    }
-
-    public function customer_purchase(){
-      $data['page']='bike/customer_purchase';
-      $this->load->view('menu/content',$data);
-    }
-
-    public function customer_purchase_women(){
-      $data['page']='bike/customer_purchase_women';
-      $this->load->view('menu/content',$data);
-    }
-
-    public function customer_purchase_kids(){
-      $data['page']='bike/customer_purchase_kids';
-      $this->load->view('menu/content',$data);
-    }
-
-    public function show_mens_bikes(){
-      $this->load->model('bike_model');
-      $data['bike']=$this->bike_model->get_mens_bikes();
-      $data['page']='bike/show_mens_bikes';
-      $this->load->view('menu/content',$data);
-    }
-
-    public function customer_mens_rental(){
+    }    
+//Mens
+    public function rent_mens(){
       $this->load->model('bike_model');
       $data['bike']=$this->bike_model->get_mens_customer();
-      $data['page']='bike/customer_mens_rental';
+      $data['page']='bike/rent_mens';
       $this->load->view('menu/content',$data);      
     }
-
-    public function customer_mens_purchase(){
+    public function rent_mens_oc(){
       $this->load->model('bike_model');
       $data['bike']=$this->bike_model->get_mens_customer();
-      $data['page']='bike/customer_mens_purchase';
-      $this->load->view('menu/content',$data);      
-    }
-    
-    public function customer_mens_all_rental(){
-      $this->load->model('bike_model');
-      $data['bike']=$this->bike_model->get_mens_customer();
-      $data['page']='bike/customer_mens_rental';
+      $data['page']='bike/rent_mens_oc';
       $this->load->view('menu/onlycontent',$data);      
     }
-
-    public function customer_mens_all_purchase(){
-      $this->load->model('bike_model');
-      $data['bike']=$this->bike_model->get_mens_customer();
-      $data['page']='bike/customer_mens_purchase';
-      $this->load->view('menu/onlycontent',$data);      
-    }
-
-    public function show_womans_bikes(){
-      $this->load->model('bike_model');
-      $data['bike']=$this->bike_model->get_womans_bikes();
-      $data['page']='bike/show_womans_bikes';
+//Womens
+    public function rent_womens_index(){
+      $data['page']='bike/rent_womens_index';
       $this->load->view('menu/content',$data);
     }
-
-    public function customer_womans_rental(){
+    public function rent_womens(){
       $this->load->model('bike_model');
       $data['bike']=$this->bike_model->get_womans_customer();
-      $data['page']='bike/customer_womans_rental';
+      $data['page']='bike/rent_womens';
       $this->load->view('menu/content',$data);      
     }
+    public function rent_womens_oc(){
+      $this->load->model('bike_model');
+      $data['bike']=$this->bike_model->get_womans_customer();
+      $data['page']='bike/rent_womens_oc';
+      $this->load->view('menu/onlycontent',$data);      
+    }
+//Kids
+    public function rent_kids_index(){
+      $data['page']='bike/rent_kids_index';
+      $this->load->view('menu/content',$data);
+    }
+    public function rent_kids(){
+      $this->load->model('bike_model');
+      $data['bike']=$this->bike_model->get_kids_customer();
+      $data['page']='bike/rent_kids';
+      $this->load->view('menu/content',$data);      
+    }
+    public function rent_kids_oc(){
+      $this->load->model('bike_model');
+      $data['bike']=$this->bike_model->get_kids_customer();
+      $data['page']='bike/rent_kids_oc';
+      $this->load->view('menu/onlycontent',$data);      
+    }
+////////////////////////////////////////////////////////////
 
-    public function customer_womans_purchase(){
+// All Sale Pages    
+    public function buy(){
+      $data['page']='bike/buy';
+      $this->load->view('menu/content',$data);
+    }
+//Mens
+    public function buy_mens(){
+      $this->load->model('bike_model');
+      $data['bike']=$this->bike_model->get_mens_customer();
+      $data['page']='bike/buy_mens';
+      $this->load->view('menu/content',$data);      
+    }
+   public function buy_mens_oc(){
+      $this->load->model('bike_model');
+      $data['bike']=$this->bike_model->get_mens_customer();
+      $data['page']='bike/buy_mens_oc';
+      $this->load->view('menu/onlycontent',$data);      
+    } 
+    public function buy_womens_index(){
+      $data['page']='bike/buy_womens_index';
+      $this->load->view('menu/content',$data);
+    }  
+//Womens
+    public function buy_womens(){
       $this->load->model('bike_model');
       $data['bike']=$this->bike_model->get_womans_customer();
       $data['page']='bike/customer_womans_purchase';
       $this->load->view('menu/content',$data);      
-    }
-
-    public function customer_womans_all_rental(){
+    } 
+    public function buy_womens_oc(){
       $this->load->model('bike_model');
       $data['bike']=$this->bike_model->get_womans_customer();
-      $data['page']='bike/customer_womans_rental';
+      $data['page']='bike/buy_womens_oc';
       $this->load->view('menu/onlycontent',$data);      
     }
-
-    public function customer_womans_all_purchase(){
-      $this->load->model('bike_model');
-      $data['bike']=$this->bike_model->get_womans_customer();
-      $data['page']='bike/customer_womans_purchase';
-      $this->load->view('menu/onlycontent',$data);      
-    }
-
-    
-
-    
-
-    public function show_kids_bikes(){
-      $this->load->model('bike_model');
-      $data['bike']=$this->bike_model->get_kids_bikes();
-      $data['page']='bike/show_kids_bikes';
+//Kids
+    public function buy_kids_index(){
+      $data['page']='bike/buy_kids_index';
       $this->load->view('menu/content',$data);
     }
-
-    public function customer_kids_rental(){
+    public function buy_kids(){
       $this->load->model('bike_model');
       $data['bike']=$this->bike_model->get_kids_customer();
-      $data['page']='bike/customer_kids_rental';
+      $data['page']='bike/rent_kids';
       $this->load->view('menu/content',$data);      
     }
-
-    public function customer_kids_purchase(){
+    public function buy_kids_oc(){
       $this->load->model('bike_model');
       $data['bike']=$this->bike_model->get_kids_customer();
-      $data['page']='bike/customer_kids_purchase';
-      $this->load->view('menu/content',$data);      
-    }
-
-    public function customer_kids_all_rental(){
-      $this->load->model('bike_model');
-      $data['bike']=$this->bike_model->get_kids_customer();
-      $data['page']='bike/customer_kids_rental';
+      $data['page']='bike/buy_kids_oc';
       $this->load->view('menu/onlycontent',$data);      
     }
 
-    public function customer_kids_all_purchase(){
-      $this->load->model('bike_model');
-      $data['bike']=$this->bike_model->get_kids_customer();
-      $data['page']='bike/customer_kids_purchase';
-      $this->load->view('menu/onlycontent',$data);      
-    }
-
+////////////////////////////////////////////////////////////
     public function edit_selected($edit_id){
       $this->load->model('bike_model');
       $data['bike_id']=$edit_id;
@@ -195,8 +157,6 @@ class Bike extends CI_Controller {
       $data['page']='bike/view_selected_kids_purchase';
       $this->load->view('menu/onlycontent',$data);
     }
-
-
   
   public function save_edited(){
     $this->load->model('bike_model');
@@ -228,6 +188,38 @@ class Bike extends CI_Controller {
     $this->load->view('menu/content',$data);
   }
   
+
+  //-- -- -Staff - -- --//
+
+  public function show_all_bikes(){
+    $this->load->model('bike_model');
+    $data['bike']=$this->bike_model->get_all_bikes();
+    $data['page']='bike/show_all_bikes';
+    $this->load->view('menu/content',$data);
+  }
+
+  public function show_mens_bikes(){
+    $this->load->model('bike_model');
+    $data['bike']=$this->bike_model->get_mens_bikes();
+    $data['page']='bike/show_mens_bikes';
+    $this->load->view('menu/content',$data);
+  }
+
+  public function show_womans_bikes(){
+    $this->load->model('bike_model');
+    $data['bike']=$this->bike_model->get_womans_bikes();
+    $data['page']='bike/show_womans_bikes';
+    $this->load->view('menu/content',$data);
+  }    
+
+  public function show_kids_bikes(){
+    $this->load->model('bike_model');
+    $data['bike']=$this->bike_model->get_kids_bikes();
+    $data['page']='bike/show_kids_bikes';
+    $this->load->view('menu/content',$data);
+  }
+
+
  
   }
 

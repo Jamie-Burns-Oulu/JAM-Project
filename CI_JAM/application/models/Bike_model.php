@@ -10,19 +10,21 @@ class Bike_model extends CI_model
     $this->db->from('bikes');
     return $this->db->get()->result_array();
   }
-  
+
   public function get_mens_bikes(){
     $this->db->select('*');
     $this->db->from('bikes');
     $this->db->where('gender','male');
     return $this->db->get()->result_array();
   }
+
   public function get_womans_bikes(){
     $this->db->select('*');
     $this->db->from('bikes');
     $this->db->where('gender','female');
     return $this->db->get()->result_array();
   }
+
   public function get_kids_bikes(){
     $this->db->select('*');
     $this->db->from('bikes');
@@ -36,23 +38,21 @@ class Bike_model extends CI_model
     $this->db->where('gender = "male" AND availability > 0 AND ( bike_id % 9 ) = 0 ' );
     return $this->db->get()->result_array();
   }
+
   public function get_womans_customer(){
     $this->db->select('bike_id,brand,model,size,rent_price, purchase_price');
     $this->db->from('bikes');
     $this->db->where('gender = "female" AND availability > 0 AND ( bike_id % 9 ) = 0 ' );
     return $this->db->get()->result_array();
   }
+
   public function get_kids_customer(){
     $this->db->select('bike_id,brand,model,size,rent_price, purchase_price');
     $this->db->from('bikes');
     $this->db->where('gender = "kids" AND availability > 0 AND ( bike_id % 3 ) = 0 ' );
     return $this->db->get()->result_array();
   }
-
-
-
-
-
+  
   public function get_selected_bike($selected_id){
     $this->db->select('bike_id,brand,model,size,rent_price,availability,maintenance,distance,
     gender,last_rental,date_bought,purchase_price,sale_price');
