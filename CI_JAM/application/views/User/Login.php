@@ -45,7 +45,7 @@
                             </div>
  
  
-                                <input class="btn btn-lg btn-success btn-block" type="submit" value="login" name="login" >
+                                <input class="btn btn-lg btn-success btn-block" type="submit" value="Login" name="login" >
  
                         </fieldset>
                     </form>

@@ -15,7 +15,7 @@
       <li> <a href="<?php echo site_url('bike/rent'); ?>">Rent</a> </li>
       <li> <a href="<?php echo site_url('bike/buy'); ?>">Buy</a> </li>
       <br>
-      <li> <a href="<?php echo site_url('user/login_view'); ?>">Register/login</a> </li>
+      <li> <a href="<?php echo site_url('user/login_view'); ?>">Login/Register</a> </li>
       <li> <a href="<?php echo site_url('user/user_logout'); ?>">Logout</a> </li>
 
     </ul>

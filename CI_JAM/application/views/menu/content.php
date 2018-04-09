@@ -1,5 +1,5 @@
 <?php
-if ($_SESSION['user_name'] == 'admin')
+if (isset($_SESSION['user_name']) == 'admin')
 {
     $this->load->view('menu/header_staff');
 }

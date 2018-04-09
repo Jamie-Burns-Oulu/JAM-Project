@@ -55,7 +55,7 @@ class Bike_model extends CI_model
   
   public function get_selected_bike($selected_id){
     $this->db->select('bike_id,brand,model,size,rent_price,availability,maintenance,distance,
-    gender,last_rental,date_bought,purchase_price,sale_price');
+    gender,last_rental,date_bought,purchase_price,sale_price,for_sale');
     $this->db->from('bikes');
     $this->db->where('bike_id',$selected_id);
     return $this->db->get()->result_array();
@@ -64,7 +64,7 @@ class Bike_model extends CI_model
   public function delete_bike($bike_id){
     $this->db->db_debug = false;
     $this->db->where('bike_id',$bike_id);
-    $test=$this->db->delete('bike');
+    $test=$this->db->delete('bikes');
     return $test;
   }
   

@@ -22,7 +22,7 @@
       <li> <a href="<?php echo site_url('bike/show_kids_bikes'); ?>">*Staff* Kids Bikes</a> </li>
       <li> <a href="<?php echo site_url('customer/show_all_customers'); ?>">*Staff* Customers</a> </li>
       <br>
-      <li> <a href="<?php echo site_url('user/login_view'); ?>">Register/login</a> </li>
+      <li> <a href="<?php echo site_url('user/login_view'); ?>">Login/Register</a> </li>
       <li> <a href="<?php echo site_url('user/user_logout'); ?>">Logout</a> </li>
 
 

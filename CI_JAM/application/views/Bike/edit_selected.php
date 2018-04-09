@@ -1,7 +1,7 @@
 <h2>Edit Selcted Bike's Information</h2>
 
 
-<form class="" action="<?php echo site_url('bike/save_edited'); ?>" method="post">
+<form class="" action="<?php echo site_url('bike/save_edited/').$selected_bike[0]['bike_id']; ?>" method="post">
    <label for="">ID</label><br>
    <input type="text" name="bike_id" value="<?php echo $selected_bike[0]['bike_id'];?>" readonly><br>
 
@@ -40,11 +40,14 @@
 
    <label for="">Sale Price</label><br>
    <input type="text" name="sale_price" value="<?php echo $selected_bike[0]['sale_price'];?>"><br><br>
+   
+   <label for="">For Sale</label><br>
+   <input type="text" name="for_sale" value="<?php echo $selected_bike[0]['for_sale'];?>"><br><br>
 
 
   <input class="btn btn-primary" type="submit" name="" value="Save">
 </form>
-<br><a href="<?php echo site_url('bike/show_all_bikes'); ?>" <button class="btn btn-primary">Cancel</button></a>
+<br><a href="<?php echo site_url('bike/show_all_bikes'); ?>" <button>Cancel</button></a>
 
 
 
