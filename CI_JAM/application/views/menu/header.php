@@ -15,10 +15,14 @@
       <li> <a href="<?php echo site_url('bike/rent'); ?>">Rent</a> </li>
       <li> <a href="<?php echo site_url('bike/buy'); ?>">Buy</a> </li>
       <br>
+      <?php $user_id=$this->session->userdata('user_id');?>
+      <?php if (!$user_id): ?>
       <li> <a href="<?php echo site_url('user/login_view'); ?>">Login/Register</a> </li>
+      <?php else: ?>
       <li> <a href="<?php echo site_url('user/user_logout'); ?>">Logout</a> </li>
+      <?php endif; ?>
 
-    </ul>
+      </ul>
 
 
   </div>
