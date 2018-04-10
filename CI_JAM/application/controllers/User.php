@@ -12,7 +12,8 @@ public function __construct(){
 
 public function index()
 {
-$this->load->view("user/register.php");
+$data['page'] = "user/register.php";
+$this->load->view('menu/content',$data);      
 }
 
 public function register_user(){
@@ -28,7 +29,7 @@ $email_check=$this->user_model->email_check($user['user_email']);
 
 if($email_check){
 $this->user_model->register_user($user);
-$this->session->set_flashdata('success_msg', 'Registered successfully. Now login to your account.');
+$this->session->set_flashdata('success_msg', 'Registered successfully.Now login to your account.');
 redirect('user/login_view');
 
 }
@@ -41,8 +42,9 @@ redirect('user');
 
 public function login_view(){
  
-    $this->load->view("user/login.php");
-     
+    $data['page'] = "user/login.php";
+    $this->load->view('menu/content',$data);      
+
     }
 
 function login_user(){
@@ -83,7 +85,7 @@ function user_profile(){
 public function user_logout(){
 
     $this->session->sess_destroy();
-    redirect('user/login_view', 'refresh');
+    redirect('bike/index', 'refresh');
     }
 
 }

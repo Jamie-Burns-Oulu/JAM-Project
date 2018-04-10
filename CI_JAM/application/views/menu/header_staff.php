@@ -21,6 +21,7 @@
       <li> <a href="<?php echo site_url('bike/show_womans_bikes'); ?>">All Womans Bikes</a> </li>
       <li> <a href="<?php echo site_url('bike/show_kids_bikes'); ?>">All Kids Bikes</a> </li>
       <li> <a href="<?php echo site_url('customer/show_all_customers'); ?>">All Customers</a> </li>
+      <li> <a href="<?php echo site_url('user/user_profile'); ?>">Profile</a> </li>
       <br>
       <?php $user_id=$this->session->userdata('user_id');?>
       <?php if (!$user_id): ?>

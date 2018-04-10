@@ -21,9 +21,9 @@ foreach ($bike as $row) {
   echo '<td>'.$row['purchase_price'].'</td>';
   echo '<td>'.$row['sale_price'].'</td>';
   echo '<td> <a href="'.site_url('bike/edit_selected/')
-  .$row['bike_id'].'"><button>E</button></a></td>';
+  .$row['bike_id'].'"><button class="btn btn-primary"><span class="glyphicon glyphicon-edit"></button></a></td>';
   echo '<td> <a href="'.site_url('bike/delete_selected/')
-  .$row['bike_id'].'"><button>D</button></a></td>';
+  .$row['bike_id'].'"><button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button></a></td>';
   echo '</tr>';
 
 }

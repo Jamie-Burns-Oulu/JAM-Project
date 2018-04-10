@@ -45,7 +45,7 @@ else {
 <br>
 <input type=submit value="Confirm">
 <input name="customer_id"  type="hidden" value="0" >
-<input name="bike_id" type="hidden" value="<?php echo $_POST['bike_id'];?>" >
+<input name="bike_id" type="hidden" value="<?php echo $selected_bike[0]['bike_id'];?>" >
 <input name="distance_out" type="hidden" value="0" >
 <input name="distance_back" type="hidden" value="0" >
 <input name="date_booked" type="hidden" value="<?php echo date("Y-m-d");?>" >

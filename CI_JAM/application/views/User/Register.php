@@ -2,19 +2,14 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Registration</title>
- 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="screen" title="no title">
- 
+    <title>Registration</title> 
  
   </head>
   <body>
  
 <span style="background-color:red;">
   <div class="container">
-      <div class="row">
-          <div class="col-md-4 col-md-offset-4">
-              <div class="login-panel panel panel-success">
+
                   <div class="panel-heading">
                       <h3 class="panel-title">Registration</h3>
                   </div>
@@ -46,9 +41,7 @@
                       </form>
                       <center><b>Already registered?</b> <br></b><a href="<?php echo site_url('user/login_view'); ?>">Login here</a></center>
                   </div>
-              </div>
-          </div>
-      </div>
+              
   </div>
  
  

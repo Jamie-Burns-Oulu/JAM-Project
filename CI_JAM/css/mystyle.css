@@ -1,27 +1,30 @@
-.menu{
-  background-color: rgb(190, 198, 201);
-  float: left;
-  width: 160px;
-  border-radius: 10px;
-  margin: 10px;
-}
-.menu ul {
+ul {
   list-style-type: none;
-}
-.menu ul li a:hover{
-  background-color: white;
-}
-
-.page{
-  margin-left: 170px;
-  background: #e6e5e5;
-}
-
-input[type=text] {
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  text-align: center;
+  position: fixed;
+  top: 0;
   width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
+  z-index:1;
+  margin-bottom: 10px;
+}
+
+li {
+  display: inline;
+  font-size: 20px;
+}
+
+li a {
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
 }
 
 .flex-container {
@@ -100,3 +103,19 @@ button{
   display: flex;
 }
 button:focus {outline:0;}
+
+
+.container
+{
+  position: relative;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding-top:80px;
+
+}
+
+fieldset
+{
+  border: none;
+}

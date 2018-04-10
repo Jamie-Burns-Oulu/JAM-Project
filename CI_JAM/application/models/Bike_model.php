@@ -55,7 +55,7 @@ class Bike_model extends CI_model
   
   public function get_selected_bike($selected_id){
     $this->db->select('bike_id,brand,model,size,rent_price,availability,maintenance,distance,
-    gender,last_rental,date_bought,purchase_price,sale_price,for_sale');
+    gender,last_rental,date_bought,purchase_price,sale_price');
     $this->db->from('bikes');
     $this->db->where('bike_id',$selected_id);
     return $this->db->get()->result_array();
@@ -64,7 +64,7 @@ class Bike_model extends CI_model
   public function delete_bike($bike_id){
     $this->db->db_debug = false;
     $this->db->where('bike_id',$bike_id);
-    $test=$this->db->delete('bikes');
+    $test=$this->db->delete('bike');
     return $test;
   }
   
@@ -74,22 +74,7 @@ class Bike_model extends CI_model
     $test=$this->db->update('bikes',$data_update);
     return $test;
   }
-  
-  public function reserve($bikeid){
-    $this->db->select('bike_id');
-    $this->db->from('bikes');
-    $this->db->where('bike_id',$bikeid );
-    return $this->db->get()->result_array();
-  }
-  
-      
-  public function add_rental($add_data){
-      $this->db->db_debug = false;
-      $test=$this->db->insert('rentals1',$add_data);
-      return $test;
-  }
-
-
+    
 
 
  

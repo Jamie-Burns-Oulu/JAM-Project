@@ -3,14 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>Login</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="screen" title="no title">
   </head>
   <body>
  
     <div class="container">
-    <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-            <div class="login-panel panel panel-success">
                 <div class="panel-heading">
                     <h3 class="panel-title">Login</h3>
                 </div>
@@ -45,16 +41,13 @@
                             </div>
  
  
-                                <input class="btn btn-lg btn-success btn-block" type="submit" value="Login" name="login" >
+                                <input class="btn btn-lg btn-success btn-block" type="submit" value="login" name="login" >
  
                         </fieldset>
                     </form>
                 <center><b>Not registered?</b> <br></b><a href="<?php echo site_url('user'); ?>">Register here</a></center>
  
                 </div>
-            </div>
-        </div>
-    </div>
 </div>
  
  
