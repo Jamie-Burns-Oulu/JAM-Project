@@ -31,26 +31,30 @@ if(!$user_id){
           <tr>
             <td>User Name</td>
             <td><?php echo $this->session->userdata('user_name'); ?></td>
+            <td><input class="form-control" placeholder="Name" name="user_name" type="text" autofocus></td>
           </tr>
           <tr>
             <td>User Email</td>
             <td><?php echo $this->session->userdata('user_email');  ?></td>
+            <td><input class="form-control" placeholder="Email" name="user_email" type="text" autofocus></td>
           </tr>
           <tr>
             <td>Address</td>
             <td><?php echo $this->session->userdata('address'); ?></td>
+            <td><input class="form-control" placeholder="Address" name="address" type="text" autofocus></td>
           </tr>
           <tr>
             <td>Rentals</td>
             <td><?php echo $this->session->userdata('rentals'); ?></td>
+            <td><input class="form-control" placeholder="Rentals" name="rentals" type="text" autofocus></td>
           </tr>
       </table>
  
  
     </div>
   </div>
-<a href="<?php echo site_url('user/user_logout');?>" >  <button type="button" class="btn-primary">Logout</button></a>
-<a href="<?php echo site_url('user/edit_profile');?>" >  <button type="button" class="btn-primary">Edit</button></a>
+<a href="<?php echo site_url('user/save_profile');?>" >  <button type="button" class="btn-primary">Save</button></a>
+<a href="<?php echo site_url('user/user_profile');?>" >  <button type="button" class="btn-primary">Cancel</button></a>
 
 </div>
   </body>
