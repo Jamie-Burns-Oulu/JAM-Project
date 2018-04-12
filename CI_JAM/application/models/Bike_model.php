@@ -86,15 +86,13 @@ class Bike_model extends CI_model
   }
   
       
-  public function add_rental($add_data){
+  public function add_rental($add_data, $reserved_bike){
       $this->db->db_debug = false;
       $test=$this->db->insert('rentals',$add_data);
-      return $test;
+      $this->db->where('bike_id',$reserved_bike);
+      $test1=$this->db->update('bikes SET availability = 0');
+      return $test1.$test;
   }
-
-
-
-
  
 
 }
