@@ -36,22 +36,12 @@ if(!$user_id){
             <td>User Email</td>
             <td><?php echo $this->session->userdata('user_email');  ?></td>
           </tr> 
-          <tr>
-            <td>Address</td>
-            <td><?php echo $this->session->userdata('address'); ?></td>
-          </tr>
-          <tr>
-            <td>Rentals</td>
-            <td><?php echo $this->session->userdata('rentals');  ?></td>
-          </tr> 
       </table>
  
  
     </div>
   </div>
 <a href="<?php echo site_url('user/user_logout');?>" >  <button type="button" class="btn-primary">Logout</button></a>
-<a href="<?php echo site_url('user/edit_profile');?>" >  <button type="button" class="btn-primary">Edit</button></a>
-
 </div>
   </body>
 </html>
