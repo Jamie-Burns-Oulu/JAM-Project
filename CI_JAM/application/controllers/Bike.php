@@ -226,7 +226,7 @@ class Bike extends CI_Controller {
   }
 
 
-  public function reserve(){ 
+  public function reserve(){      
     $this->load->model('bike_model');
     $size_selected = $this->input->post('size');
     $model_selected = $this->input->post('model');
@@ -235,13 +235,14 @@ class Bike extends CI_Controller {
     $this->load->view('menu/content',$data);
   }
 
-public function add_rental(){  
-		if(isset($_SESSION['user_name'])){
-      //we dont' do anything
-    }
-    else {
-      redirect('user/login_view');
-    }
+public function add_rental($reserved_bike){  
+  if(isset($_SESSION['user_name'])){
+    //we dont' do anything
+  }
+  else {
+    redirect('user/login_view');
+  }   
+
   $add_data=array(	
     'rentals_id'=>$this->input->post('rentals_id'),
     'rented_price'=>$this->input->post('rented_price'),
@@ -255,34 +256,22 @@ public function add_rental(){
     'total_rent_price'=>$this->input->post('total_rent_price')
   );
 
-  $success=$this->Bike_model->add_rental($add_data);
+  $success=$this->Bike_model->add_rental($add_data, $reserved_bike);
+  
   if($success){
     $data['message']='You have completed your rental';
   }
   else {
-    $data['message']='Something went wrong'.var_dump($add_data);
+    $data['message']='Something went wrong';
   }
   $data['page']='bike/complete';
   $this->load->view('menu/content',$data);
-}
-
-
-
-public function validate_rental(){  
-  if(isset($_SESSION['user_name'])){
-    //we dont' do anything
   }
-  else {
-    redirect('user/login_view');
-  }
+
+
 
 
 }
-
-
-
- 
-  }
 
 
 

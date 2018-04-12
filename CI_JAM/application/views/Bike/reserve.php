@@ -1,5 +1,5 @@
-<h3>Confirm Your Reservation, <?php echo ($_SESSION['user_name'])?></h3>
-<form action="<?php echo site_url('bike/add_rental'); ?>" target="_self" method="POST">
+<h3>Confirm Your Reservation</h3>
+<form action="<?php echo site_url('bike/add_rental/').$reserve_bike[0]['bike_id']; ?>" target="_self" method="POST">
 Brand:
 <input name="brand" value="<?php echo $reserve_bike[0]['brand'];?>" readonly>
 <br> 
