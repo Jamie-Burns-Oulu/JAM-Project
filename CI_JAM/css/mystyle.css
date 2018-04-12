@@ -1,14 +1,25 @@
-ul {
-  list-style-type: none;
+body{
   padding: 0;
-  overflow: hidden;
-  background-color: #333;
+}
+
+.container
+{
+  text-align: center;
+  padding-top:40px;
+}
+
+ul {
+  padding: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 56%, rgba(255,255,255,1) 82%, rgba(255,255,255,1) 100%);
   text-align: center;
   position: fixed;
   top: 0;
+  left:0;
   width: 100%;
   z-index:1;
-  margin-bottom: 10px;
+  height: 40px;
+  margin: 0;
+  color: white;
 }
 
 li {
@@ -24,7 +35,7 @@ li a {
 }
 
 li a:hover {
-  background-color: #111;
+  color: green;
 }
 
 .flex-container {
@@ -89,6 +100,7 @@ button{
   cursor: pointer;
   text-shadow: 0 0 3px black;
 }
+
 #closing{
   padding-top:130px;
   padding-left: 700px;
@@ -102,20 +114,35 @@ button{
 .all_rental{
   display: flex;
 }
-button:focus {outline:0;}
 
-
-.container
-{
-  position: relative;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  padding-top:80px;
-
+button:focus {
+  outline:0;
 }
+button:hover {
+  outline:0;
+  color: green;
+  text-shadow: none;
+}
+
+
 
 fieldset
 {
   border: none;
+}
+
+#wbtn,#mbtn,#kbtn{
+  color: white;
+  font-size: 30px;
+  padding: 5px;
+  line-height: 2;
+  background: none;
+  border-style: none;
+  cursor: pointer;
+}
+
+#wbtn,#mbtn,#kbtn :hover {
+  outline:0;
+  color: white;
+  text-shadow: 0 0 3px black;
 }

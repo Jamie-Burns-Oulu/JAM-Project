@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Bike extends CI_Controller {  
 
+  function __construct(){
+    parent::__construct();
+    $this->load->model('Bike_model');
+}
+
+
 //  Index  -- Main page
    public function index(){
       $data['page']='bike/index';
@@ -218,6 +224,61 @@ class Bike extends CI_Controller {
     $data['page']='bike/show_kids_bikes';
     $this->load->view('menu/content',$data);
   }
+
+
+  public function reserve(){ 
+    $this->load->model('bike_model');
+    $size_selected = $this->input->post('size');
+    $model_selected = $this->input->post('model');
+    $data['reserve_bike']=$this->bike_model->reserve($model_selected, $size_selected);
+    $data['page']='bike/reserve';
+    $this->load->view('menu/content',$data);
+  }
+
+public function add_rental(){  
+		if(isset($_SESSION['user_name'])){
+      //we dont' do anything
+    }
+    else {
+      redirect('user/login_view');
+    }
+  $add_data=array(	
+    'rentals_id'=>$this->input->post('rentals_id'),
+    'rented_price'=>$this->input->post('rented_price'),
+    'distance_out'=>$this->input->post('distance_out'),
+    'distance_back'=>$this->input->post('distance_back'),
+    'date_booked'=>$this->input->post('date_booked'),
+    'date_rented'=>$this->input->post('date_rented'),
+    'date_returned'=>$this->input->post('date_returned'),
+    'customer_id'=>$this->input->post('customer_id'),
+    'bike_id'=>$this->input->post('bike_id'),
+    'total_rent_price'=>$this->input->post('total_rent_price')
+  );
+
+  $success=$this->Bike_model->add_rental($add_data);
+  if($success){
+    $data['message']='You have completed your rental';
+  }
+  else {
+    $data['message']='Something went wrong'.var_dump($add_data);
+  }
+  $data['page']='bike/complete';
+  $this->load->view('menu/content',$data);
+}
+
+
+
+public function validate_rental(){  
+  if(isset($_SESSION['user_name'])){
+    //we dont' do anything
+  }
+  else {
+    redirect('user/login_view');
+  }
+
+
+}
+
 
 
  

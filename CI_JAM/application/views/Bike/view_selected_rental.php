@@ -1,13 +1,3 @@
-<head>
-<style>
-input:disabled {
- 	 background: none;
-    border: none;
-    color: black;  
-}
-
-</style>
-</head>
 
 <form action="<?php echo site_url('bike/reserve/').$selected_bike[0]['bike_id']; ?>" target="_top" method="POST">
 Brand:

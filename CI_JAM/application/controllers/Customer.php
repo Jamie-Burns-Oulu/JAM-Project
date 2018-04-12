@@ -17,9 +17,9 @@ class Customer extends CI_Controller {
     public function save_customer(){
       $this->load->model('Customer_model');
       $insert_data=array(
-        'user_id'=>$this->input->post('user_id'),
-        'user_name'=>$this->input->post('user_name'),
-        'user_email'=>$this->input->post('user_email'),
+        'customer_id'=>$this->input->post('customer_id'),
+        'name'=>$this->input->post('name'),
+        'email'=>$this->input->post('email'),
         'address'=>$this->input->post('address'),
         'rentals'=>$this->input->post('rentals'),
         'last_rental'=>$this->input->post('last_rental'),

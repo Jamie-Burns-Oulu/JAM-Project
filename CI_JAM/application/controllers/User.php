@@ -78,44 +78,15 @@ function login_user(){
 
 function user_profile(){
 
-    $data['page'] = 'user/user_profile.php';
-    $this->load->view('menu/content',$data);      
+    $this->load->view('user/user_profile.php');
+        
     }
 
-function edit_profile(){
-    $data['page'] = 'user/edit_profile.php';
-    $this->load->view('menu/content',$data); 
-}
-
-function save_profile(){
-    $user=array(
-        'user_name'=>$this->input->post('user_name'),
-        'user_email'=>$this->input->post('user_email'),
-        'user_password'=>md5($this->input->post('user_password')),
-        'address'=>$this->input->post('address'),
-        'email'=>($this->input->post('email'))
-          );
-          print_r($user);
-    
-    $email_check=$this->user_model->email_check($user['user_email']);
-    
-    if($email_check){
-    $this->user_model->register_user($user);
-    $this->session->set_flashdata('success_msg', 'Change successful.');
-    redirect('user/login_view');
-    
-    }
-    else{
-    
-    $this->session->set_flashdata('error_msg', 'Error occured,Try again.');
-    redirect('user');
-    }
-    }
-}
-
-function user_logout(){
+public function user_logout(){
 
     $this->session->sess_destroy();
     redirect('bike/index', 'refresh');
     }
+
+}
 ?>

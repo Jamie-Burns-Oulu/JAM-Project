@@ -76,6 +76,24 @@ class Bike_model extends CI_model
   }
     
 
+  public function reserve($model_selected, $size_seleted){
+    $this->db->select('*');
+    $this->db->from('bikes');
+    $selection = array('model' => $model_selected, 'size' => $size_seleted, 'AND availability > 0');
+    $this->db->where($selection);    
+    $this->db->limit(1);
+    return $this->db->get()->result_array();
+  }
+  
+      
+  public function add_rental($add_data){
+      $this->db->db_debug = false;
+      $test=$this->db->insert('rentals',$add_data);
+      return $test;
+  }
+
+
+
 
  
 

@@ -1,28 +1,19 @@
-<head>
-<style>
-input:disabled {
- 	 background: none;
-    border: none;
-    color: black;  
-}
-</style>
-
-</head>
+<h3>Confirm Your Reservation, <?php echo ($_SESSION['user_name'])?></h3>
 <form action="<?php echo site_url('bike/add_rental'); ?>" target="_self" method="POST">
 Brand:
-<input name="brand" value="<?php echo $_POST['brand']?>" readonly>
+<input name="brand" value="<?php echo $reserve_bike[0]['brand'];?>" readonly>
 <br> 
 Model:
-<input name="model" value ="<?php echo $_POST['model']?>"readonly>
+<input name="model" value ="<?php echo $reserve_bike[0]['model'];?>"readonly>
 <br>
 Size:
-<input name="size" value="<?php echo $_POST['size']?>"readonly>
+<input name="size" value="<?php echo $reserve_bike[0]['size'];?>"readonly>
 <br>
 Gender:
-<input name="gender" value="<?php echo $_POST['gender']?>"readonly>
+<input name="gender" value="<?php echo $reserve_bike[0]['gender'];?>"readonly>
 <br>
 Rent Price: €
-<input name="rented_price" value="<?php echo $_POST['rent_price']?>"readonly>
+<input name="rented_price" value="<?php echo $reserve_bike[0]['rent_price'];?>"readonly>
 <br>
 Rent From: 
 <input name="date_rented" type="date" value="<?php echo $_POST['rent_from']?>"readonly>
@@ -45,9 +36,11 @@ else {
 <br>
 <input type=submit value="Confirm">
 <input name="customer_id"  type="hidden" value="0" >
-<input name="bike_id" type="hidden" value="<?php echo $selected_bike[0]['bike_id'];?>" >
-<input name="distance_out" type="hidden" value="0" >
+<input name="rentals_id"  type="hidden" value="0" >
+<input name="bike_id" type="hidden" value="<?php echo $reserve_bike[0]['bike_id'];?>" >
+<input name="distance_out" type="hidden" value="<?php echo $reserve_bike[0]['distance'];?>" >
 <input name="distance_back" type="hidden" value="0" >
 <input name="date_booked" type="hidden" value="<?php echo date("Y-m-d");?>" >
 
 </form>
+

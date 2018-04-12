@@ -10,9 +10,9 @@
 <?php
 foreach ($bike as $row) {
   echo '<tr>';
-  echo '<td>'.$row['user_id'].'</td>';
-  echo '<td>'.$row['user_name'];
-  echo '<td>'.$row['user_email'].'</td>';
+  echo '<td>'.$row['customer_id'].'</td>';
+  echo '<td>'.$row['name'];
+  echo '<td>'.$row['email'].'</td>';
   echo '<td>'.$row['address'].'</td>';
   echo '<td>'.$row['rentals'].'</td>';
   echo '<td>'.$row['last_rental'];
