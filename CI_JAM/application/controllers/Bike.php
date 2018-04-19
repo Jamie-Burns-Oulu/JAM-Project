@@ -14,6 +14,11 @@ class Bike extends CI_Controller {
       $data['page']='bike/index';
       $this->load->view('menu/onlycontent',$data);
     } 
+
+    public function About_us(){
+      $data['page']='bike/About_us';
+      $this->load->view('menu/content',$data);
+    }
 ////////////////////////////////////////////////////////////
 
 // All Rentals Pages
