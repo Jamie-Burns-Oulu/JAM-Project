@@ -21,6 +21,7 @@
       <?php else: ?>
       <li> <a href="<?php echo site_url('user/login_view'); ?>">Login/Register</a> </li>
       <?php endif; ?>
+      <li> <a href="<?php echo site_url('bike/About_us'); ?>">About Us</a> </li>
 
     </ul>
 
