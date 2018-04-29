@@ -52,7 +52,26 @@ class Bike_model extends CI_model
     $this->db->where('gender = "kids" AND availability > 0 AND ( bike_id % 3 ) = 0 ' );
     return $this->db->get()->result_array();
   }
-  
+  public function get_mens_buy(){
+    $this->db->select('bike_id,brand,model,size,rent_price, purchase_price');
+    $this->db->from('bikes');
+    $this->db->where('gender = "male" AND for_sale > 0 AND ( bike_id % 9 ) = 0 ' );
+    return $this->db->get()->result_array();
+  }
+
+  public function get_womans_buy(){
+    $this->db->select('bike_id,brand,model,size,rent_price, purchase_price');
+    $this->db->from('bikes');
+    $this->db->where('gender = "female" AND for_sale > 0 AND ( bike_id % 9 ) = 0 ' );
+    return $this->db->get()->result_array();
+  }
+
+  public function get_kids_buy(){
+    $this->db->select('bike_id,brand,model,size,rent_price, purchase_price');
+    $this->db->from('bikes');
+    $this->db->where('gender = "kids" AND for_sale > 0 AND ( bike_id % 3 ) = 0 ' );
+    return $this->db->get()->result_array();
+  }
   public function get_selected_bike($selected_id){
     $this->db->select('bike_id,brand,model,size,rent_price,availability,maintenance,distance,
     gender,last_rental,date_bought,purchase_price,sale_price');
@@ -76,14 +95,23 @@ class Bike_model extends CI_model
   }
     
 
-  public function reserve($model_selected, $size_seleted){
+  public function reserve($model_selected, $size_selected){
     $this->db->select('*');
     $this->db->from('bikes');
-    $selection = array('model' => $model_selected, 'size' => $size_seleted, 'AND availability > 0');
+    $selection = array('model' => $model_selected, 'size' => $size_selected, 'AND availability > 0');
     $this->db->where($selection);    
     $this->db->limit(1);
     return $this->db->get()->result_array();
   }
+
+  public function reserve_kids($bike_selected){
+    $this->db->select('*');
+    $this->db->from('bikes');
+    $selection = array('bike_id' => $bike_selected, 'AND availability > 0');
+    $this->db->where($selection);    
+    return $this->db->get()->result_array();
+  }
+  
   
       
   public function add_rental($add_data, $reserved_bike){
@@ -93,6 +121,21 @@ class Bike_model extends CI_model
       $test1=$this->db->update('bikes SET availability = 0');
       return $test1.$test;
   }
+
+  public function reserve_buy($bike_selected){
+    $this->db->select('*');
+    $this->db->from('bikes');
+    $this->db->where('bike_id', $bike_selected);    
+    return $this->db->get()->result_array();
+  }
+
+  public function add_purchase($add_data, $bike_selected){
+    $this->db->db_debug = false;
+    $test=$this->db->insert('sales',$add_data);
+    $this->db->where('bike_id',$bike_selected);
+    $test1=$this->db->update('bikes SET availability = 0');
+    return $test1.$test;
+}
  
 
 }

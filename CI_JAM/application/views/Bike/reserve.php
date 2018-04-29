@@ -1,4 +1,14 @@
 <h3>Confirm Your Reservation</h3>
+<head>
+<style>
+form{
+    text-align: left;
+padding-left: 450px;
+}
+</style>
+</head>
+
+
 <form action="<?php echo site_url('bike/add_rental/').$reserve_bike[0]['bike_id']; ?>" target="_self" method="POST">
 Brand:
 <input name="brand" value="<?php echo $reserve_bike[0]['brand'];?>" readonly>
@@ -12,7 +22,7 @@ Size:
 Gender:
 <input name="gender" value="<?php echo $reserve_bike[0]['gender'];?>"readonly>
 <br>
-Rent Price: €
+Rent Price (/day): €
 <input name="rented_price" value="<?php echo $reserve_bike[0]['rent_price'];?>"readonly>
 <br>
 Rent From: 
@@ -34,8 +44,8 @@ else {
 }
  echo $totalcost; ?>" readonly>
 <br>
-<input type=submit value="Confirm">
-<input name="customer_id"  type="hidden" value="0" >
+<input type=submit value="Confirm" style="background:lightgrey; cursor:pointer">
+<input name="customer_id"  type="hidden" value="<?php echo $this->session->userdata('user_id'); ?>" >
 <input name="rentals_id"  type="hidden" value="0" >
 <input name="bike_id" type="hidden" value="<?php echo $reserve_bike[0]['bike_id'];?>" >
 <input name="distance_out" type="hidden" value="<?php echo $reserve_bike[0]['distance'];?>" >

@@ -1,0 +1,65 @@
+img {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   border-radius: 9px;
+}
+
+h2 {
+   text-align: center;
+
+}
+
+.header {
+   text-align: center;      
+
+}
+
+.ImgDescr {
+   font-size: 10px;
+}
+
+.row-2 {
+   display: flex;
+}
+
+.p1 {
+   margin-left: 25%;
+   margin-top: 2%;
+   max-width: 25%;
+   border-radius: 9px;
+   background-color: white;
+   padding: 10px;
+   text-align: left;
+   text-decoration: none;
+}
+
+.buy {
+   position: absolute;
+   left: 8px;
+   bottom: 16px;
+}
+
+.container2 {
+   position: relative;
+   text-align: center;
+   margin-top: 1%;
+   margin-left: -0%;
+   max-width: 25%;
+
+}
+
+.fa {
+   padding: 15px;
+   font-size: 25px;
+   color: black;
+
+}
+.fa:hover {
+   color: #D5D5D5;
+   text-decoration: none;
+
+}
+
+
+

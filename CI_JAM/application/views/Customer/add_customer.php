@@ -1,13 +1,18 @@
-<h2>Add a new customer</h2>
+<h2>Add New Customer</h2>
 <form class="" action="<?php echo site_url('customer/save_customer'); ?>" method="post">
-<input type="number" name="customer_id" placeholder="customer_id"><br>
-<input type="text" name="name" placeholder="name"><br>
-<input type="text" name="email" placeholder="email"><br>
-<input type="text" name="address" placeholder="address"><br>
-<input type="number" name="rentals" placeholder="rentals"><br>
-<input type="date" name="last_rental" placeholder="last_rental"><br>
-<input type="number" name="bike_id" placeholder="bike_id"><br>
+<input type="hidden" name="user_id" value="0">
+Name:
+<input type="text" name="user_name" placeholder="Name"><br>
+Email:
+<input type="text" name="user_email" placeholder="Email"><br>
+Address:
+<input type="text" name="address" placeholder="Address"><br>
+Number of Rentals:
+<input type="number" name="rentals" placeholder="Number of Rentals"><br>
+Last Rental:
+<input type="date" name="last_rental" placeholder="Last Rental"><br>
+<input type="hidden" name="bike_id" placeholder="Bike ID"><br>
 <br>
-<input type="submit" name="" value="Save">
-<a href="<?php echo site_url('Customer/show_all_customers'); ?>"> Cancel </a>
+<input style="cursor:pointer" type="submit" name="" value="Save">
+<a style="text-decoration:none; color:black" href="<?php echo site_url('Customer/show_all_customers'); ?>"> Cancel </a>
 </form>

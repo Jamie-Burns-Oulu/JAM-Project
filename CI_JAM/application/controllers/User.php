@@ -19,9 +19,14 @@ $this->load->view('menu/content',$data);
 public function register_user(){
  
     $user=array(
+    'user_id'=>$this->input->post('user_id'),
     'user_name'=>$this->input->post('user_name'),
     'user_email'=>$this->input->post('user_email'),
     'user_password'=>md5($this->input->post('user_password')),
+    'address'=>$this->input->post('address'),
+    'rentals'=>$this->input->post('rentals'),
+    'bike_id'=>$this->input->post('bike_id'),
+    'last_rental'=>$this->input->post('last_rental'),
       );
       print_r($user);
 
@@ -61,6 +66,10 @@ function login_user(){
             $this->session->set_userdata('user_id',$data['user_id']);
             $this->session->set_userdata('user_email',$data['user_email']);
             $this->session->set_userdata('user_name',$data['user_name']);
+            $this->session->set_userdata('rentals',$data['rentals']);
+            $this->session->set_userdata('last_rental',$data['last_rental']);
+         
+
             echo '<a>Welcome, '. $data['user_name'] . '!</a>';
     
             $data['page']='bike/rent';
@@ -71,15 +80,18 @@ function login_user(){
         }
         else{
             $this->session->set_flashdata('error_msg', 'Error occured,Try again.');
-            $this->load->view("user/login.php");
+            $data['page'] = "user/user_profile.php";
+            $this->load->view('menu/content',$data);      
     
         }
     }
 
 function user_profile(){
 
-    $this->load->view('user/user_profile.php');
-        
+   
+    $data['page'] = "user/user_profile.php";
+    $this->load->view('menu/content',$data);      
+
     }
 
 public function user_logout(){

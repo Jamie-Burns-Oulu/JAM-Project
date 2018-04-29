@@ -10,7 +10,7 @@ body{
 
 ul {
   padding: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 56%, rgba(255,255,255,1) 82%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(to bottom, rgb(124, 116, 153) 0%, rgb(144, 149, 175) 56%, rgba(255,255,255,1) 82%, rgba(255,255,255,1) 100%);
   text-align: center;
   position: fixed;
   top: 0;
@@ -35,7 +35,7 @@ li a {
 }
 
 li a:hover {
-  color: green;
+  color: black;
 }
 
 .flex-container {
@@ -52,7 +52,7 @@ li a:hover {
 }
 
 .flex-item {
-  background: linear-gradient(to bottom, #92c1ff 0%, #8faff3 80%,#437cf7 100%);
+  background: linear-gradient(to bottom, rgb(124, 116, 153),  rgb(182, 174, 211) );
   padding: 10px;
   width:300px;
   height: 150px;
@@ -62,25 +62,27 @@ li a:hover {
   color: white;
   font-weight: bold;
   font-size: 15px;
-  border-radius:50px;
+  border-radius:100px;
 
 }
 
 .bike_details{
     height: 100%;
     width: 100%;
-    background: linear-gradient(to bottom, #92c1ff 0%,rgb(173, 197, 250) 41%,#9ebaf7 53%,#437cf7 100%);
+    background: linear-gradient(to bottom, rgb(182, 174, 211) 0%, rgb(173, 150, 209) 56%, rgba(255,255,255,1) 100%);
     position: fixed;
     padding: 0;
+    padding-left: 10px;
     margin: 0;
     top: 0;
     left: 0;
     opacity: 0.95;
     cursor: pointer;
 }
+
 .iframe0{
-  height: 300px;
-  width: 400px;
+  height: 700px;
+  width: 600px;
   position: fixed;
   padding: 0;
   margin: 200px 400px auto;
@@ -98,7 +100,6 @@ button{
   background: none;
   border-style: none;
   cursor: pointer;
-  text-shadow: 0 0 3px black;
 }
 
 #closing{
@@ -120,29 +121,37 @@ button:focus {
 }
 button:hover {
   outline:0;
-  color: green;
+  color: black;
   text-shadow: none;
 }
-
-
-
 fieldset
 {
   border: none;
 }
 
-#wbtn,#mbtn,#kbtn{
-  color: white;
-  font-size: 30px;
-  padding: 5px;
-  line-height: 2;
-  background: none;
-  border-style: none;
-  cursor: pointer;
+select{
+  border-radius: 5px;
+  font-size: 20px;
 }
 
-#wbtn,#mbtn,#kbtn :hover {
-  outline:0;
-  color: white;
-  text-shadow: 0 0 3px black;
+input {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 25px;
+  font-family: inherit;
+}
+form{
+  font-size: 25px;
+}
+
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 30px;
+}
+td, th{
+  border: 1px solid #ddd;
+  padding: 8px;
 }

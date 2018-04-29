@@ -17,9 +17,9 @@ class Customer extends CI_Controller {
     public function save_customer(){
       $this->load->model('Customer_model');
       $insert_data=array(
-        'customer_id'=>$this->input->post('customer_id'),
-        'name'=>$this->input->post('name'),
-        'email'=>$this->input->post('email'),
+        'user_id'=>$this->input->post('user_id'),
+        'user_name'=>$this->input->post('user_name'),
+        'user_email'=>$this->input->post('user_email'),
         'address'=>$this->input->post('address'),
         'rentals'=>$this->input->post('rentals'),
         'last_rental'=>$this->input->post('last_rental'),
@@ -27,10 +27,11 @@ class Customer extends CI_Controller {
       );
       $test=$this->Customer_model->insert_customer($insert_data);
       if($test){
-        $data['message']='New customer added succesfully';
+        $data['message']='New customer added successfully'.print_r($insert_data);
+
       }
       else{
-        $data['message']='Error';
+        $data['message']='Error'.print_r($insert_data);
       }
 
       $data['page']='Customer/add_customer_to_db';

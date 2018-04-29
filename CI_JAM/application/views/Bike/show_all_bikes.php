@@ -1,9 +1,9 @@
 <h2>Bikes</h2>
-<table class="table table-hover table-bordered">
-  <tr class="info">
+<table style="font-size:18px">
+  <tr>
     <th>ID</th><th>Brand</th><th>Model</th><th>Size</th><th>Rental Price</th><th>Available</th><th>Maintenance</th>
     <th>Distance</th><th>Gender</th><th>Last Rented</th><th>Date Purchased</th><th>Purchase Price</th><th>Sale Price</th>
-    <th>Edit</th><th>Delete</th>
+    <th>Edit</th>
 <?php
 foreach ($bike as $row) {
   echo '<tr>';
@@ -21,10 +21,8 @@ foreach ($bike as $row) {
   echo '<td>'.$row['purchase_price'].'</td>';
   echo '<td>'.$row['sale_price'].'</td>';
   echo '<td> <a href="'.site_url('bike/edit_selected/')
-  .$row['bike_id'].'"><button class="btn btn-primary"><span class="glyphicon glyphicon-edit"></button></a></td>';
-  echo '<td> <a href="'.site_url('bike/delete_selected/')
-  .$row['bike_id'].'"><button class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button></a></td>';
-  echo '</tr>';
+  .$row['bike_id'].'"><button style="color:black">&#9998;</button></a></td>';
+  echo '</tr>'; 
 
 }
  ?>

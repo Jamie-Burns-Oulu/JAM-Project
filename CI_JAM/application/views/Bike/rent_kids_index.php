@@ -7,8 +7,8 @@
 </head>
 
 <h2>Bicycles for Rental</h2>
-<button id=mbtn >Men's</button>
-<button id=wbtn >Women's</button>
+<button id=mbtn style="color:grey" >Men's</button>
+<button id=wbtn style="color:grey">Women's</button>
 <button id=kbtn style="color:black">Kids'</button>
 <br>
 Click the bicycle of your choice to reserve now!
@@ -67,22 +67,22 @@ $(document).ready(function () {
          mid.show();
          wid.hide();
          kid.hide();
-         $("#kbtn").css("color", "white");
-         $("#wbtn").css("color", "white");
+         $("#kbtn").css("color", "grey");
+         $("#wbtn").css("color", "grey");
 
       } else if (!mbtn && wbtn && !kbtn) {
          mid.hide();
          wid.show();
          kid.hide();
-         $("#kbtn").css("color", "white");
-         $("#mbtn").css("color", "white");
+         $("#kbtn").css("color", "grey");
+         $("#mbtn").css("color", "grey");
 
       } else if (!mbtn && !wbtn && kbtn) {
          mid.hide();
          wid.hide();
          kid.show();
-         $("#mbtn").css("color", "white");
-         $("#wbtn").css("color", "white");
+         $("#mbtn").css("color", "grey");
+         $("#wbtn").css("color", "grey");
       }
    }
 

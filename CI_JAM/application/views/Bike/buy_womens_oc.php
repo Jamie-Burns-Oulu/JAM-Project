@@ -23,7 +23,7 @@
 
 ?>
 
-<div class="bike_details"><div id=closing>X</div>
+<div class="bike_details"><div id=closing>x</div>
   <iframe class="iframe0" id=iframesrc src="http://localhost/CI_JAM/index.php/bike/view_selected_purchase/1"></iframe>
 </div>
 
